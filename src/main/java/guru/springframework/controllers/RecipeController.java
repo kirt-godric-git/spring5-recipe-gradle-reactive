@@ -31,7 +31,7 @@ public class RecipeController {
     public String showById(@PathVariable String id, Model model){
 
     	// Creating "block()/blockFirst()/blockLast() are blocking, which is not supported in thread reactor-http-nio-2"
-        model.addAttribute("recipe", recipeService.findById(id).block());
+        //model.addAttribute("recipe", recipeService.findById(id).block());
         model.addAttribute("recipe", recipeService.findById(id));
 
         return "recipe/show";

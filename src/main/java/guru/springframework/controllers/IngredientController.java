@@ -83,12 +83,12 @@ public class IngredientController {
     	log.info("IngredientController.updateRecipeIngredient(): Recipe id: " + recipeId+ " Ingredient Id: "+id);
     	
         //model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, id).block());
-    	//model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, id));
-    	Mono<IngredientCommand> ingredientCommandMono = ingredientService.findByRecipeIdAndIngredientId(recipeId, id);
+    	model.addAttribute("ingredient", ingredientService.findByRecipeIdAndIngredientId(recipeId, id));
+    	/*Mono<IngredientCommand> ingredientCommandMono = ingredientService.findByRecipeIdAndIngredientId(recipeId, id);
     	ingredientCommandMono.subscribe();
     	
     	log.info("ingredientCommandMono: Recipe id: " + ingredientCommandMono.block().getRecipeId()+ " Ingredient Id: "+ingredientCommandMono.block().getId());
-        model.addAttribute("ingredient", ingredientCommandMono);
+        model.addAttribute("ingredient", ingredientCommandMono);*/
 
         //model.addAttribute("uomList", unitOfMeasureService.listAllUoms());
         //model.addAttribute("uomList",  unitOfMeasureService.listAllUoms().collectList().block());
